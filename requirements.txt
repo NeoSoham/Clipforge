@@ -1,0 +1,9 @@
+opencv-python-headless
+librosa
+numpy
+ffmpeg-python
+tqdm
+soundfile
+fastapi
+uvicorn
+python-multipart

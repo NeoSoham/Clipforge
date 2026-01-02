@@ -1,0 +1,22 @@
+# Virtual env
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Generated data
+data/
+clips/
+
+# Thumbnails & frames
+*.jpg
+*.png
+*.mp4
+
+# Node
+web/node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
