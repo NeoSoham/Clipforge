@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI, UploadFile, File, Request
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pathlib import Path
@@ -19,8 +19,7 @@ app = FastAPI(title="ClipForge API")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",
-        "https://clipforge-five.vercel.app",
+        "*"
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -78,6 +77,9 @@ def root():
 # Run engine
 # -----------------------------
 @app.post("/run")
+async def options_run(request: Request):
+    return JSONResponse(status_code=200, content={})
+
 def run_clipforge(video: UploadFile = File(...)):
     video_path = RAW_DIR / video.filename
 
